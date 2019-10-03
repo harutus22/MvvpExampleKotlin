@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MvvpExampleKotlin</string>
+    <string name="refresh">Refresh</string>
+    <string name="has_issues">has issues</string>
+</resources>
