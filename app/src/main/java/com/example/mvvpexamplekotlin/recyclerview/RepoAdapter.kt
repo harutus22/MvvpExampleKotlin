@@ -25,8 +25,10 @@ class RepoAdapter(private var repoList: ArrayList<Repository>,
         holder.bind(repoList[position], listener)
 
     fun replaceData(list: ArrayList<Repository>) {
-        repoList = list
-        notifyDataSetChanged()
+        if (!repoList.containsAll(list)) {
+            repoList.addAll(list)
+            notifyDataSetChanged()
+        }
     }
 
     interface OnRepositoryItemClickListener {

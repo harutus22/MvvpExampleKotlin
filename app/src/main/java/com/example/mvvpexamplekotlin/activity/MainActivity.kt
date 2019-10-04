@@ -12,6 +12,7 @@ import com.example.mvvpexamplekotlin.databinding.ActivityMainBinding
 import com.example.mvvpexamplekotlin.model.Repository
 import com.example.mvvpexamplekotlin.recyclerview.RepoAdapter
 
+
 class MainActivity : AppCompatActivity(), RepoAdapter.OnRepositoryItemClickListener {
     override fun onItemClick(position: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

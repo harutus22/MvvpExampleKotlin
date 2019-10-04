@@ -22,9 +22,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             GitRepoRepository.OnRepositoryReadyCallback {
             override fun onDataReady(data: ArrayList<Repository>) {
                 isLoading.set(false)
-                if (data != repositories.value) {
-                    repositories.value = data
-                }
+                repositories.value = data
             }
         })
     }

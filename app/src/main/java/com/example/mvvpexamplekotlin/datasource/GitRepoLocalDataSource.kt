@@ -6,14 +6,15 @@ import com.example.mvvpexamplekotlin.model.Repository
 class GitRepoLocalDataSource {
     val arrayList = ArrayList<Repository>()
     fun getRepositories(onRepositoryReadyCallback: OnRepoLocalReadyCallback){
-        arrayList.add(Repository(
+        val list = ArrayList<Repository>()
+        list.add(Repository(
             "First Local Repo",
             "Local Owner 1",
             100,
             false
         )
         )
-        arrayList.add(
+        list.add(
             Repository(
                 "Second Local Repo",
                 "Local Owner 2",
@@ -21,7 +22,7 @@ class GitRepoLocalDataSource {
                 true
             )
         )
-        arrayList.add(
+        list.add(
             Repository(
                 "Third Local Repo",
                 "Local Owner 3",
@@ -29,6 +30,9 @@ class GitRepoLocalDataSource {
                 false
             )
         )
+        if (arrayList.isEmpty()){
+            arrayList.addAll(list)
+        }
         Handler().postDelayed({onRepositoryReadyCallback.onLocalDataReady(arrayList)}, 2000)
     }
 
